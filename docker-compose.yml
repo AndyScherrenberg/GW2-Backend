@@ -1,0 +1,15 @@
+version: "1"
+services:
+  database:
+    build: .
+    container_name: gw-db
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
